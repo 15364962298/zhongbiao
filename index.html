@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日期对象</title>
+    <style>
+        .box{
+            width:800px;
+            height: 200px;
+            border:3px solid #000;
+            margin: 100px auto;
+            font-size: 100px;
+            text-align: center;
+            line-height: 200px;
+        }
+        .box span{
+            color:#999;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="h"></span>时
+        <span class="m"></span>分
+        <span class="s"></span>秒
+    </div>
+</body>
+</html>
+<script>
+    let box=document.querySelector('.box')
+    function fn(){
+        let now=new Date()
+        let h=document.querySelector('.h')
+        let m=document.querySelector('.m')
+        let s=document.querySelector('.s')
+        h.innerHTML=now.getHours()
+        m.innerHTML=now.getMinutes()
+        s.innerHTML=now.getSeconds()
+    }
+    fn()
+    setInterval(fn,1000)
+</script>

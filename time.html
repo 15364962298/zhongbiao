@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手表</title>
+    <style>
+        .box{
+            width:300px;
+            height: 300px;
+            margin:100px auto;
+            position: relative;
+            background: url(img/4c81156d45c7e6f5b4bb0.jpg) no-repeat center;
+        }
+        .circle{
+            width:15px;
+            height: 15px;
+            background: #000;
+            border-radius:50%;
+            position: absolute;
+            left:142px;
+            top:142px;
+        }
+        .circle1{
+            width:12px;
+            height: 12px;
+            background: red;
+            border-radius:50%;
+            position: absolute;
+            top:144px;
+            left:144px;
+        }
+        .circle2{
+            width:10px;
+            height: 10px;
+            background: #ff6700;
+            border-radius:50%;
+            position: absolute;
+            top:145px;
+            left:145px;
+        }
+        .h{
+            width:10px;
+            height: 50px;
+            background: #000;
+            border-radius:50% 50% 0 0 ;
+            position: absolute;
+            top:-40px;
+            left:2.5px;
+        }
+        .m{
+            width:8px;
+            height: 70px;
+            background: #333;
+            border-radius:50% 50% 0 0 ;
+            position: absolute;
+            top:-60px;
+            left:2px;
+
+        }
+        .s{
+            width:6px;
+            height: 80px;
+            background: #ff6700;
+            border-radius:50% 50% 0 0 ;
+            position: absolute;
+            top:-70px;
+            left:2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="circle">
+            <div class="h"></div>
+        </div>
+        <div class="circle1">
+            <div class="m"></div>
+        </div>
+        <div class="circle2">
+            <div class="s"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function fn(){
+        let now=new Date()
+        let circle=document.querySelector('.circle')
+        let circle1=document.querySelector('.circle1')
+        let circle2=document.querySelector('.circle2')
+        let a=now.getHours()
+        let b=now.getMinutes()
+        let c=now.getSeconds()
+        circle.style.transform=`rotate(${a*30}deg)`
+        circle1.style.transform=`rotate(${b*6}deg)`
+        circle2.style.transform=`rotate(${c*6}deg)`
+    }
+    setInterval(fn,1000)
+</script>
